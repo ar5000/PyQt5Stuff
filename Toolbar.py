@@ -7,7 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, Qt
+
 
 
 class Ui_MainWindow(object):
@@ -25,6 +26,7 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.label.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing)
 
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -58,6 +60,12 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+# lambda = function that is called on all on one line
+        self.actionNew.triggered.connect(lambda: self.clicked("New Was Clicked"))
+        self.actionSave.triggered.connect(lambda: self.clicked("Save was Clicked"))
+        self.actionCopy.triggered.connect(lambda: self.clicked("Copy was Clicked"))
+        self.actionPaste.triggered.connect(lambda: self.clicked("Paste was Clicked"))
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -76,6 +84,11 @@ class Ui_MainWindow(object):
         self.actionPaste.setText(_translate("MainWindow", "Paste"))
         self.actionPaste.setStatusTip(_translate("MainWindow", "Paste"))
         self.actionPaste.setShortcut(_translate("MainWindow", "Ctrl+V"))
+
+    def clicked(self, text):
+        self.label.setText(text)
+        self.label.adjustSize()
+        self.label.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing)
 
 
 if __name__ == "__main__":
