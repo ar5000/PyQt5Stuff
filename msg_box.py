@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#from but_def import button_click
+from but_def import button_click
 from PyQt5.QtWidgets import QMessageBox
 
 
@@ -30,12 +30,12 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Message Box Example"))
         self.pushButton.setText(_translate("MainWindow", "Click Me"))
-        self.pushButton.clicked.connect(self.button_click)
-
+        self.pushButton.clicked.connect(button_click)
+'''
     def button_click(self):
         print("button clicked")
         QMessageBox.information(MainWindow,'PyQt5 Example', 'Welcome')
-
+'''
 
 if __name__ == "__main__":
     import sys
