@@ -30,11 +30,11 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Message Box Example"))
         self.pushButton.setText(_translate("MainWindow", "Click Me"))
-        self.pushButton.clicked.connect(button_click)
+        self.pushButton.clicked.connect(self.button_click)
 
-def button_click(self):
-    print("button clicked")
-    QMessageBox.information(MainWindow,'PyQt5 Example', 'Welcome')
+    def button_click(self):
+        print("button clicked")
+        QMessageBox.information(MainWindow,'PyQt5 Example', 'Welcome')
 
 
 if __name__ == "__main__":
