@@ -18,13 +18,17 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(80, 120, 271, 161))
+
         font = QtGui.QFont()
         font.setPointSize(36)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
+
+
         MainWindow.setCentralWidget(self.centralwidget)
+
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 550, 21))
         self.menubar.setObjectName("menubar")
@@ -68,8 +72,10 @@ class Ui_MainWindow(object):
         self.actionSave.setShortcut(_translate("MainWindow", "Ctrl+S"))
         self.actionCopy.setText(_translate("MainWindow", "Copy"))
         self.actionCopy.setStatusTip(_translate("MainWindow", "Copy File"))
+        self.actionCopy.setShortcut(_translate("MainWindow", "Ctrl+C"))
         self.actionPaste.setText(_translate("MainWindow", "Paste"))
         self.actionPaste.setStatusTip(_translate("MainWindow", "Paste"))
+        self.actionPaste.setShortcut(_translate("MainWindow", "Ctrl+V"))
 
 
 if __name__ == "__main__":
