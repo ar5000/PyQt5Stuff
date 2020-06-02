@@ -79,6 +79,8 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
 
+        self.pushButton.clicked.connect(self.pressed)
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -93,6 +95,12 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Submit"))
         self.label_2.setText(_translate("MainWindow", "Result:"))
 
+    def pressed(self):
+        x = int(self.comboX.currentText())
+        y = int(self.comboY.currentText())
+        xor = (x and not y) or (not x and not y)
+
+        self.label_3.setText(str(xor))
 
 if __name__ == "__main__":
     import sys
